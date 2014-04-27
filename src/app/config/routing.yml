@@ -1,0 +1,4 @@
+property_privately_security:
+    resource: "@PropertyPrivatelySecurityBundle/Resources/config/routing.yml"
+    prefix:   /
+
