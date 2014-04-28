@@ -1,7 +1,24 @@
 parameters:
-#    property_privately_security.example.class: PropertyPrivately\SecurityBundle\Example
+    pp_security.webservice_authenticated_voter.class: PropertyPrivately\SecurityBundle\Authorization\Voter\WebserviceAuthenticatedVoter
+    pp_security.webservice_token_authenticator.class: PropertyPrivately\SecurityBundle\Authentication\WebserviceTokenAuthenticator
+    pp_security.webservice_token_user_provider.class: PropertyPrivately\SecurityBundle\Security\User\WebserviceTokenUserProvider
 
 services:
-#    property_privately_security.example:
-#        class: %property_privately_security.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    pp_security.webservice_authenticated_voter:
+        class: %pp_security.webservice_authenticated_voter.class%
+        arguments:
+            - "@security.authentication.trust_resolver"
+        public: false
+        tags:
+            - { name: security.voter }
+
+    pp_security.webservice_token_authenticator:
+        class: %pp_security.webservice_token_authenticator.class%
+        arguments:
+            - "@pp_security.webservice_token_user_provider"
+
+    pp_security.webservice_token_user_provider:
+        class: %pp_security.webservice_token_user_provider.class%
+        arguments:
+            - "@guzzle.client"
+            - "@request_stack"

@@ -9,17 +9,17 @@
  * file that was distributed with this source code.
  */
 
-namespace PropertyPrivately\SecurityBundle\Controller;
+namespace PropertyPrivately\ShowroomBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * Authentication Controller
+ * Home Controller
  */
-class AuthenticationController extends Controller
+class HomeController extends Controller
 {
-    public function loginAction()
+    public function homeAction()
     {
-        return $this->render('PropertyPrivatelySecurityBundle:Default:index.html.twig');
+        return $this->render('PropertyPrivatelyShowroomBundle:Home:index.html.twig');
     }
 }

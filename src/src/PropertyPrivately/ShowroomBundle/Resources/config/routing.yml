@@ -1,0 +1,3 @@
+pp_showroom_homepage:
+    pattern:  /
+    defaults: { _controller: PropertyPrivatelyShowroomBundle:Home:home }

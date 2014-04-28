@@ -1,3 +1,9 @@
-property_privately_security_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: PropertyPrivatelySecurityBundle:Default:index }
+pp_security_login:
+    pattern: /login
+    defaults: { _controller: PropertyPrivatelySecurityBundle:Authentication:login }
+    methods: [GET,POST]
+
+pp_security_logout:
+    pattern: /logout
+    defaults: { _controller: PropertyPrivatelySecurityBundle:Authentication:logout }
+    methods: [GET]

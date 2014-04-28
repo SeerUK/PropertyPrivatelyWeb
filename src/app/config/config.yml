@@ -67,3 +67,10 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+guzzle:
+    base_url: "%api_base_url%"
+
+    headers:
+        X-API-App-Token: "%api_app_token%"
+        X_API_App_Token: "%api_app_token%"

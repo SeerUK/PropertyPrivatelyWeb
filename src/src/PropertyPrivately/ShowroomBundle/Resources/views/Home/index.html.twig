@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    {% if app.user %}
+        <p>Welcome back, {{ app.user.username }}.</p>
+        <p><a href="{{ url('pp_security_logout') }}">Log out</a></p>
+    {% else %}
+        <p>Welcome guest.</p>
+        <p><a href="{{ url('pp_security_login') }}">Log in</a></p>
+    {% endif %}
+</body>
+</html>
