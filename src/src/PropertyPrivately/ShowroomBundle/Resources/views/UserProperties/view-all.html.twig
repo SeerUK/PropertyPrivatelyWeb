@@ -1,0 +1,38 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}{{ app.user.username }}'s Properties{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="page-header">
+            <a href="{{ url('pp_showroom_user_properties_create') }}" class="btn btn-success pull-right">Create Property</a>
+            <h1>Properties <small>for {{ app.user.username }}</small></h1>
+        </div>
+
+        <ul class="media-list">
+            {% for property in properties %}
+                <li class="media">
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            {{ property.title }}
+                            <small class="text-muted">
+                                {% if property.buildingName %}{{ property.buildingName }}, {% endif %}
+                                {{ property.address1 }},
+                                {% if property.address2 %}{{ property.address2 }}, {% endif %}
+                                {% if property.town %}{{ property.town }}, {% endif %}
+                                {% if property.postcode %}{{ property.postcode }}, {% endif %}
+                            </small>
+                        </h4>
+                        <p>{{ property.description }}</p>
+                        <div class="controls">
+                            <a href="{{ url('pp_showroom_user_properties_edit', { 'id': property.id }) }}" class="btn btn-default">Edit</a>
+                            <a href="{{ url('pp_showroom_user_properties_delete', { 'id': property.id }) }}" class="btn btn-danger">Delete</a>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
