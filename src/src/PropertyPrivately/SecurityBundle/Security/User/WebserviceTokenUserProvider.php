@@ -61,6 +61,8 @@ class WebserviceTokenUserProvider implements UserProviderInterface
             return false;
         }
 
+        $this->client->setDefaultOption('headers/X-API-User-Token', $apiUserToken);
+
         return $response->json();
     }
 

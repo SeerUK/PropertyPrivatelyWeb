@@ -12,13 +12,7 @@
 namespace PropertyPrivately\SecurityBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
-use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
-use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Guzzle\Http\Exception\RequestException;
-use PropertyPrivately\SecurityBundle\Model\WebserviceUser;
 
 /**
  * Authentication Controller

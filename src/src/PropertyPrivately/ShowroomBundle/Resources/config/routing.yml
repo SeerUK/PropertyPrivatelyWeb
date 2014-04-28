@@ -1,3 +1,28 @@
 pp_showroom_homepage:
     pattern:  /
     defaults: { _controller: PropertyPrivatelyShowroomBundle:Home:home }
+    methods: [GET]
+
+pp_showroom_user_properties_view_all:
+    pattern: /user/properties
+    defaults: { _controller: PropertyPrivatelyShowroomBundle:UserProperties:viewAll }
+    methods: [GET]
+
+pp_showroom_user_properties_create:
+    pattern: /user/properties/create
+    defaults: { _controller: PropertyPrivatelyShowroomBundle:UserProperties:create }
+    methods: [GET,POST]
+
+pp_showroom_user_properties_edit:
+    pattern: /user/properties/{id}/edit
+    defaults: { _controller: PropertyPrivatelyShowroomBundle:UserProperties:edit }
+    methods: [GET,POST]
+    requirements:
+        id: \d+
+
+pp_showroom_user_properties_delete:
+    pattern: /user/properties/{id}/delete
+    defaults: { _controller: PropertyPrivatelyShowroomBundle:UserProperties:delete }
+    methods: [GET]
+    requirements:
+        id: \d+
